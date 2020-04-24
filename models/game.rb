@@ -40,9 +40,20 @@ class Game
         SqlRunner.run(sql, values)
     end
 
+    def self.all()
+        sql = "SELECT * FROM games"
+        game_data = SqlRunner.run(sql)
+        games = map_items(game_data)
+        return games
+    end
+
     def self.delete_all()
         sql = "DELETE FROM games"
         SqlRunner.run(sql)
+    end
+
+    def self.map_items(game_data)
+        return game_data.map {|game| Game.new(game)} 
     end
 
 end

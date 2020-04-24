@@ -63,5 +63,3 @@ game3 = Game.new({
 game1.save()
 game2.save()
 game3.save()
-
-

@@ -44,9 +44,20 @@ class Team
         SqlRunner.run(sql, values)
     end
 
+    def self.all()
+        sql = "SELECT * FROM teams"
+        team_data = SqlRunner.run(sql)
+        teams = map_items(team_data)
+        return teams
+    end
+
     def self.delete_all()
         sql = "DELETE FROM teams"
         SqlRunner.run(sql)
+    end
+
+    def self.map_items(team_data)
+        return team_data.map {|team| Team.new(team)}
     end
 
 end
