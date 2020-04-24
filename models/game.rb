@@ -40,6 +40,14 @@ class Game
         SqlRunner.run(sql, values)
     end
 
+    def self.find(id)
+        sql = "SELECT * FROM games WHERE id=$1"
+        values = [id]
+        result = SqlRunner.run(sql, values).first
+        game = Game.new(result)
+        return game
+    end
+
     def self.all()
         sql = "SELECT * FROM games"
         game_data = SqlRunner.run(sql)
