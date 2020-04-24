@@ -1,4 +1,4 @@
-# require_relative('../db/sql_runner')
+require_relative('../db/sql_runner')
 
 class Game
 
@@ -11,6 +11,18 @@ class Game
         @home_goals = options['home_goals'].to_i
         @away_team_id = options['away_team_id'].to_i
         @away_goals = options['away_goals'].to_i
+    end
+
+    def save()
+        sql = "INSERT INTO games 
+        (home_team_id, home_goals, away_team_id, away_goals)
+        VALUES
+        ($1, $2, $3, $4)
+        RETURNING id"
+        values = [@home_team_id, @home_goals, @away_team_id, @away_goals]
+        result = SqlRunner.run(sql, values)
+        id = result.first['id']
+        @id = id
     end
 
 end
