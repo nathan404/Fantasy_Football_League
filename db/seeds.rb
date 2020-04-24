@@ -48,9 +48,9 @@ game1 = Game.new({
 
 game2 = Game.new({
     'home_team_id' => team1.id,
-    'home_goals' => 2,
+    'home_goals' => 7,
     'away_team_id' => team3.id,
-    'away_goals' => 1
+    'away_goals' => 5
 })
 
 game3 = Game.new({
@@ -63,3 +63,4 @@ game3 = Game.new({
 game1.save()
 game2.save()
 game3.save()
+p team1.total_goals_scored

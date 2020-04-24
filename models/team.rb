@@ -29,11 +29,18 @@ class Team
         @id = id
     end
 
-    def results
-        sql = "SELECT * FROM games where home_team_id = $1 OR away_team_id = $1"
+    def games
+        sql = "SELECT * FROM games WHERE home_team_id = $1 OR away_team_id = $1"
         values = [@id]
         result_data = SqlRunner.run(sql, values)
-        return result_data.map {|result| Game.new(result)}
+        return result_data.map {|game| Game.new(game)}
+    end
+
+    def total_goals_scored
+        sql = "SELECT * FROM games WHERE home_team_id = $1 OR away_team_id = $1"
+        values = [@id]
+        goals_scored_data = SqlRunner.run(sql, values)
+        return goals_scored_data.map {|goals| Game.new(goals)}
     end
 
     def update()
