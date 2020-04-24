@@ -1,6 +1,9 @@
 require_relative('../models/game')
 require_relative('../models/team')
 
+Game.delete_all()
+Team.delete_all()
+
 team1 = Team.new({
     'name' => 'France',
     'played' => 0,
