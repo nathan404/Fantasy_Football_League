@@ -17,6 +17,6 @@ CREATE TABLE games (
     id SERIAL PRIMARY KEY,
     home_team_id INT REFERENCES teams(id),
     home_goals INT,
-    home_team_id INT REFERENCES teams(id),
+    away_team_id INT REFERENCES teams(id),
     away_goals INT
 );

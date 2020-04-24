@@ -17,4 +17,16 @@ class Team
         @points = options['points'].to_i
     end
 
+    def save()
+        sql = "INSERT INTO teams
+        (name, played, wins, draws, losses, goals_for, goals_against, points)
+        VALUES
+        ($1, $2, $3, $4, $5, $6, $7, $8)
+        RETURNING id"
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points]
+        result = SqlRunner.run(sql, values)
+        id = result.first['id']
+        @id = id
+    end
+
 end
