@@ -63,4 +63,7 @@ game3 = Game.new({
 game1.save()
 game2.save()
 game3.save()
-p team1.total_goals_scored
+
+p game1.score
+p game2.score
+p game3.score

@@ -25,6 +25,34 @@ class Game
         @id = id
     end
 
+    # def teams()
+    #     sql = "SELECT home_team_id, away_team_id FROM games WHERE id = $1"
+    #     values = [@id]
+    #     team = SqlRunner.run(sql, values).first
+    #     return Team.new(team)
+    # end
+
+    def home_team
+        home_team = Team.find(@home_team_id)
+        return home_team.name
+    end
+
+    def away_team
+        away_team = Team.find(@away_team_id)
+        return away_team.name
+    end
+
+    def score()
+        sql = "SELECT * FROM games WHERE id = $1"
+        values = [@id]
+        score = SqlRunner.run(sql, values)
+        home_team = Game.map_item(score).home_team
+        home_goals = Game.map_item(score).home_goals
+        away_goals = Game.map_item(score).away_goals
+        away_team = Game.map_item(score).away_team
+        return "#{home_team} #{home_goals} - #{away_goals} #{away_team}"
+    end
+
     def update()
         sql = "UPDATE games SET
         (home_team_id, home_goals, away_team_id, away_goals)
@@ -62,6 +90,11 @@ class Game
 
     def self.map_items(game_data)
         return game_data.map {|game| Game.new(game)} 
+    end
+
+    def self.map_item(game_data)
+        result = Game.map_items(game_data)
+        return result.first
     end
 
 end
