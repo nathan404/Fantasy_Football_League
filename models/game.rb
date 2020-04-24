@@ -25,4 +25,13 @@ class Game
         @id = id
     end
 
+    def update()
+        sql = "UPDATE games SET
+        (home_team_id, home_goals, away_team_id, away_goals)
+        = ($1, $2, $3, $4)
+        WHERE id = $5"
+        values = [@home_team_id, @home_goals, @away_team_id, @away_goals, @id]
+        SqlRunner.run(sql, values)
+    end
+
 end
