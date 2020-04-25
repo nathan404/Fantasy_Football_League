@@ -2,6 +2,6 @@
 
 <div id='game-wrapper'>
 <% @games.each do |game| %>
-    <p><%= game.score %></p>
+    <p><a href='/games/<%= game.id %>'><%= game.score %></a></p>
 <% end %>
 </div>

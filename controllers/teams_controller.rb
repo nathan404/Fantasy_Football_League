@@ -11,7 +11,6 @@ get '/teams' do
 end
 
 get '/teams/:id' do
-    @games = Game.all()
     @team = Team.find(params['id'].to_i)
     erb(:'teams/show')
 end

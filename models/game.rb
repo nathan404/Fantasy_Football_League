@@ -45,7 +45,7 @@ class Game
     def teams()
         home_team = game_info.home_team
         away_team = game_info.away_team
-        return "#{home_team} played #{away_team}"
+        return "#{home_team} versus #{away_team}"
     end
 
     def score()
