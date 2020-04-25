@@ -42,22 +42,31 @@ class Team
         if home_id == @id.to_i or away_id == @id.to_i
             @played += 1
         end
-        if home_id == @id.to_i and game.home_goals > game.away_goals
-            @wins += 1
-            @points += 3
-        elsif home_id == @id.to_i && game.home_goals == game.away_goals
-            @draws += 1
-            @points += 1
-        elsif home_id == @id.to_i && game.home_goals < game.away_goals
-            @losses += 1
-        elsif away_id == @id.to_i && game.away_goals > game.home_goals
+        if home_id == @id.to_i
+            @goals_for += game.home_goals
+            @goals_against += game.away_goals
+            if game.home_goals > game.away_goals
                 @wins += 1
                 @points += 3
-        elsif away_id == @id.to_i && game.away_goals == game.home_goals
+            elsif game.home_goals == game.away_goals
                 @draws += 1
                 @points += 1
-        elsif away_id == @id.to_i && game.away_goals < game.home_goals
+            else game.home_goals < game.away_goals
                 @losses += 1
+            end
+        end
+        if away_id == @id.to_i
+            @goals_for += game.away_goals
+            @goals_against += game.home_goals
+            if game.away_goals > game.home_goals
+                @wins += 1
+                @points += 3
+            elsif game.away_goals == game.home_goals
+                @draws += 1
+                @points += 1
+            else game.away_goals < game.home_goals
+                @losses += 1
+            end
         end
     end
 
