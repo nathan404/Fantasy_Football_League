@@ -33,29 +33,29 @@ class Team
         sql = "SELECT * FROM games WHERE home_team_id = $1 OR away_team_id = $1"
         values = [@id]
         result_data = SqlRunner.run(sql, values)
-        return result_data.map {|game| Game.new(game)}
+        Game.map_items(result_data)
     end
 
-    def result(game)
-        @played += 1
-        if game.home_team_id == @id && game.home_goals > game.away_goals
-            @wins += 1
-            @points += 3
-        elsif game.home_team_id == @id && game.home_goals == game.away_goals
-            @draws += 1
-            @points += 1
-        elsif game.home_team_id == @id && game.home_goals < game.away_goals
-            @losses += 1
-        elsif game.away_team_id == @id && game.away_goals > game.home_goals
-                @wins += 1
-                @points += 3
-        elsif game.away_team_id == @id && game.away_goals == game.home_goals
-                @draws += 1
-                @points += 1
-        elsif game.away_team_id == @id && game.away_goals < game.home_goals
-                @losses += 1
-        end
-    end
+    # def result(game)
+    #     @played += 1
+    #     if game.home_team_id == @id && game.home_goals > game.away_goals
+    #         @wins += 1
+    #         @points += 3
+    #     elsif game.home_team_id == @id && game.home_goals == game.away_goals
+    #         @draws += 1
+    #         @points += 1
+    #     elsif game.home_team_id == @id && game.home_goals < game.away_goals
+    #         @losses += 1
+    #     elsif game.away_team_id == @id && game.away_goals > game.home_goals
+    #             @wins += 1
+    #             @points += 3
+    #     elsif game.away_team_id == @id && game.away_goals == game.home_goals
+    #             @draws += 1
+    #             @points += 1
+    #     elsif game.away_team_id == @id && game.away_goals < game.home_goals
+    #             @losses += 1
+    #     end
+    # end
 
     def team_info()
         sql = "SELECT * FROM teams WHERE id = $1"
@@ -64,6 +64,9 @@ class Team
         team_data = Team.map_item(info)
     end
 
+    def played_add_one
+        @played += 1
+    end
     # def total_goals_scored
     #     sql = "SELECT * FROM games WHERE home_team_id = $1 OR away_team_id = $1"
     #     values = [@id]

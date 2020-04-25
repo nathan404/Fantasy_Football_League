@@ -35,6 +35,8 @@ team3 = Team.new({
     'points' => 0
 })
 
+p team1.played_add_one
+
 team1.save()
 team2.save()
 team3.save()
@@ -64,4 +66,6 @@ game1.save()
 game2.save()
 game3.save()
 
-p team1.team_info
+p team1.played_add_one
+
+team1.update()
