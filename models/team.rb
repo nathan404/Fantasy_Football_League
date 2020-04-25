@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Team
 
     attr_reader :id, :name
-    attr_accessor :played, :wins, :draws, :losses, :goals_for, :goals_against, :points, :in_table
+    attr_accessor :played, :wins, :draws, :losses, :goals_for, :goals_against, :points
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
@@ -15,16 +15,15 @@ class Team
         @goals_for = options['goals_for'].to_i
         @goals_against = options['goals_against'].to_i
         @points = options['points'].to_i
-        @in_table = options['in_table']
     end
 
     def save()
         sql = "INSERT INTO teams
-        (name, played, wins, draws, losses, goals_for, goals_against, points, in_table)
+        (name, played, wins, draws, losses, goals_for, goals_against, points)
         VALUES
-        ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        ($1, $2, $3, $4, $5, $6, $7, $8)
         RETURNING id"
-        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @in_table]
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
         @id = id
@@ -87,10 +86,10 @@ class Team
 
     def update()
         sql = "UPDATE teams SET
-        (name, played, wins, draws, losses, goals_for, goals_against, points, in_table)
-        = ($1, $2, $3, $4, $5, $6, $7, $8, $9)
-        WHERE id = $10"
-        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @in_table=true, @id]
+        (name, played, wins, draws, losses, goals_for, goals_against, points)
+        = ($1, $2, $3, $4, $5, $6, $7, $8)
+        WHERE id = $9"
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @id]
         SqlRunner.run(sql, values)
     end
 
@@ -114,13 +113,6 @@ class Team
         teams = map_items(team_data)
         return teams
     end
-
-    # def self.all_unselected()
-    #     sql = "SELECT * FROM teams WHERE teams.in_table = FALSE"
-    #     team_data = SqlRunner.run(sql)
-    #     teams = map_items(team_data)
-    #     return teams
-    # end
 
     def self.delete_all()
         sql = "DELETE FROM teams"

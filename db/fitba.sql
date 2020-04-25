@@ -10,8 +10,7 @@ CREATE TABLE teams (
     losses INT,
     goals_for INT,
     goals_against INT,
-    points INT,
-    in_table BOOLEAN
+    points INT
 );
 
 CREATE TABLE games (
