@@ -90,7 +90,7 @@ class Team
         (name, played, wins, draws, losses, goals_for, goals_against, points, in_table)
         = ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         WHERE id = $10"
-        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @in_table, @id]
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @in_table=true, @id]
         SqlRunner.run(sql, values)
     end
 
@@ -109,18 +109,18 @@ class Team
     end
 
     def self.all()
-        sql = "SELECT * FROM teams WHERE teams.in_table = TRUE"
+        sql = "SELECT * FROM teams"
         team_data = SqlRunner.run(sql)
         teams = map_items(team_data)
         return teams
     end
 
-    def self.all_unselected()
-        sql = "SELECT * FROM teams WHERE teams.in_table = FALSE"
-        team_data = SqlRunner.run(sql)
-        teams = map_items(team_data)
-        return teams
-    end
+    # def self.all_unselected()
+    #     sql = "SELECT * FROM teams WHERE teams.in_table = FALSE"
+    #     team_data = SqlRunner.run(sql)
+    #     teams = map_items(team_data)
+    #     return teams
+    # end
 
     def self.delete_all()
         sql = "DELETE FROM teams"

@@ -16,11 +16,11 @@ get '/teams/new' do
 end
 
 post '/teams' do
-    team = Team.new(params)
-    team.in_table = true
-    p team
-    team.save
-    redirect to ('/teams')
+    @team = Team.new(params)
+    @team.save
+    @team.update
+    p @team
+    redirect to '/teams'
 end
 
 get '/teams/:id' do
