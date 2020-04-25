@@ -10,7 +10,21 @@ get '/teams' do
     erb(:'teams/index')
 end
 
+get '/teams/new' do
+    @teams = Team.all_unselected()
+    erb(:'teams/new')
+end
+
+post '/teams' do
+    team = Team.new(params)
+    team.in_table = true
+    p team
+    team.save
+    redirect to ('/teams')
+end
+
 get '/teams/:id' do
     @team = Team.find(params['id'].to_i)
     erb(:'teams/show')
 end
+

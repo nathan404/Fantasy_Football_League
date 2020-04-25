@@ -1,0 +1,14 @@
+<h1>Add a team</h1>
+
+<form action='/teams' method='post'>
+    <label>
+    Choose a team:
+        <select name='team_id'>
+        <% for team in @teams  %>
+        <option value='<%= team.id %>'><%= team.name %></option>
+        <% end %>
+        </select>
+    </label>
+
+<input type='submit' value='Add team'>
+</form>

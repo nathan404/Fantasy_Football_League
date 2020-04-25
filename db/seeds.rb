@@ -12,7 +12,9 @@ team1 = Team.new({
     'losses' => 0,
     'goals_for' => 0,
     'goals_against' => 0,
-    'points' => 0 })
+    'points' => 0,
+    'in_table' => true 
+})
 
 team2 = Team.new({
     'name' => 'Brazil',
@@ -22,7 +24,9 @@ team2 = Team.new({
     'losses' => 0,
     'goals_for' => 0,
     'goals_against' => 0,
-    'points' => 0 })
+    'points' => 0,
+    'in_table' => true
+})
 
 team3 = Team.new({
     'name' => 'Croatia',
@@ -32,7 +36,8 @@ team3 = Team.new({
     'losses' => 0,
     'goals_for' => 0,
     'goals_against' => 0,
-    'points' => 0
+    'points' => 0,
+    'in_table' => true
 })
 
 team4 = Team.new({
@@ -43,13 +48,27 @@ team4 = Team.new({
     'losses' => 0,
     'goals_for' => 0,
     'goals_against' => 0,
-    'points' => 0
+    'points' => 0,
+    'in_table' => true
+})
+
+team5 = Team.new({
+    'name' => 'Scotland',
+    'played' => 0,
+    'wins' => 0,
+    'draws' => 0,
+    'losses' => 0,
+    'goals_for' => 0,
+    'goals_against' => 0,
+    'points' => 0,
+    'in_table' => false
 })
 
 team1.save()
 team2.save()
 team3.save()
 team4.save()
+team5.save()
 
 game1 = Game.new({
     'home_team_id' => team1.id,
@@ -120,3 +139,4 @@ team1.update()
 team2.update()
 team3.update()
 team4.update()
+team5.update()
