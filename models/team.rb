@@ -36,6 +36,34 @@ class Team
         return result_data.map {|game| Game.new(game)}
     end
 
+    def result(game)
+        @played += 1
+        if game.home_team_id == @id && game.home_goals > game.away_goals
+            @wins += 1
+            @points += 3
+        elsif game.home_team_id == @id && game.home_goals == game.away_goals
+            @draws += 1
+            @points += 1
+        elsif game.home_team_id == @id && game.home_goals < game.away_goals
+            @losses += 1
+        elsif game.away_team_id == @id && game.away_goals > game.home_goals
+                @wins += 1
+                @points += 3
+        elsif game.away_team_id == @id && game.away_goals == game.home_goals
+                @draws += 1
+                @points += 1
+        elsif game.away_team_id == @id && game.away_goals < game.home_goals
+                @losses += 1
+        end
+    end
+
+    def team_info()
+        sql = "SELECT * FROM teams WHERE id = $1"
+        values = [@id]
+        info = SqlRunner.run(sql, values)
+        team_data = Team.map_item(info)
+    end
+
     # def total_goals_scored
     #     sql = "SELECT * FROM games WHERE home_team_id = $1 OR away_team_id = $1"
     #     values = [@id]
@@ -80,6 +108,11 @@ class Team
 
     def self.map_items(team_data)
         return team_data.map {|team| Team.new(team)}
+    end
+
+    def self.map_item(team_data)
+        result = Team.map_items(team_data)
+        return result.first
     end
 
 end

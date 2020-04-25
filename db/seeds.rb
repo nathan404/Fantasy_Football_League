@@ -64,9 +64,4 @@ game1.save()
 game2.save()
 game3.save()
 
-p game1.score
-p game2.score
-p game3.score
-p game1.teams
-p game2.teams
-p game3.teams
+p team1.team_info
