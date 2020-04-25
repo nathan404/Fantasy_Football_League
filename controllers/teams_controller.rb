@@ -11,15 +11,13 @@ get '/teams' do
 end
 
 get '/teams/new' do
-    @teams = Team.all_unselected()
+    @teams = Team.all()
     erb(:'teams/new')
 end
 
 post '/teams' do
-    @team = Team.new(params)
-    @team.save
-    @team.update
-    p @team
+    Team.new(params).save
+    p Team.all
     redirect to '/teams'
 end
 

@@ -6,7 +6,7 @@
     </label>
         <select name="team_name" id="team_select">
         <% @teams.each do |team| %>
-            <option value=<%= team.name %>><%= team.name %></option>
+            <option value=<%= team.id %>><%= team.name %></option>
         <% end %>
         </select>
 
