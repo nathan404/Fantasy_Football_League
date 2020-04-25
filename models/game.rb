@@ -35,23 +35,24 @@ class Game
         return away_team.name
     end
 
-    def teams()
-        sql = "SELECT home_team_id, away_team_id FROM games WHERE id = $1"
+    def game_info()
+        sql = "SELECT * FROM games WHERE id = $1"
         values = [@id]
-        teams = SqlRunner.run(sql, values)
-        home_team = Game.map_item(teams).home_team
-        away_team = Game.map_item(teams).away_team
+        info = SqlRunner.run(sql, values)
+        game_data = Game.map_item(info)
+    end
+
+    def teams()
+        home_team = game_info.home_team
+        away_team = game_info.away_team
         return "#{home_team} played #{away_team}"
     end
 
     def score()
-        sql = "SELECT * FROM games WHERE id = $1"
-        values = [@id]
-        score = SqlRunner.run(sql, values)
-        home_team = Game.map_item(score).home_team
-        home_goals = Game.map_item(score).home_goals
-        away_goals = Game.map_item(score).away_goals
-        away_team = Game.map_item(score).away_team
+        home_team = game_info.home_team
+        home_goals = game_info.home_goals
+        away_team = game_info.away_team
+        away_goals = game_info.away_goals
         return "#{home_team} #{home_goals} - #{away_goals} #{away_team}"
     end
 
