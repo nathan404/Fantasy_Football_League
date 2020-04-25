@@ -5,3 +5,7 @@ require_relative('../models/team.rb')
 require_relative('../models/game.rb')
 also_reload('../models/*')
 
+get '/teams' do
+    @teams = Team.all()
+    erb(:'teams/index')
+end
