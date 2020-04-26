@@ -17,7 +17,6 @@ end
 
 post '/teams' do
     Team.new(params).save
-    p Team.all
     redirect to '/teams'
 end
 

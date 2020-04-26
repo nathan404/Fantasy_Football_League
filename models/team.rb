@@ -25,7 +25,7 @@ class Team
         RETURNING id"
         values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points]
         result = SqlRunner.run(sql, values)
-        id = result.first['id']
+        id = result.first['id'].to_i
         @id = id
     end
 
