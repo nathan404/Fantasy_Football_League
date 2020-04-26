@@ -11,7 +11,6 @@ get '/teams' do
 end
 
 get '/teams/new' do
-    @teams = Team.all()
     erb(:'teams/new')
 end
 
