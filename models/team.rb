@@ -36,6 +36,12 @@ class Team
         Game.map_items(result_data)
     end
 
+    def delete_games()
+        sql = "DELETE FROM games WHERE home_team_id = $1 OR away_team_id = $1"
+        values = [@id]
+        SqlRunner.run(sql, values)
+    end
+
     def result(game)
         home_id = game.home_team_id
         away_id = game.away_team_id

@@ -27,6 +27,7 @@ end
 
 post '/teams/:id/delete' do
     team = Team.find(params[:id])
+    team.delete_games()
     team.delete()
     redirect to '/teams'
 end
