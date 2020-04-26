@@ -22,6 +22,6 @@ post '/games' do
 end
 
 get '/games/:id' do
-    @game = Game.find(params['id'].to_i)
+    @game = Game.find(params[:id])
     erb(:'games/show')
 end

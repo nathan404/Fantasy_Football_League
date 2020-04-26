@@ -21,7 +21,12 @@ post '/teams' do
 end
 
 get '/teams/:id' do
-    @team = Team.find(params['id'].to_i)
+    @team = Team.find(params[:id])
     erb(:'teams/show')
 end
 
+post '/teams/:id/delete' do
+    team = Team.find(params[:id])
+    team.delete()
+    redirect to '/teams'
+end
