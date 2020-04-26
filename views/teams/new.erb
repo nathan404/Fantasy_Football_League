@@ -1,14 +1,14 @@
 <h1>Add a team</h1>
 
 <form method="POST" action="/teams">
-    <label for="team_select">
+    <label for="team-select">
     Choose a team:
     </label>
-        <select name="team_name" id="team_select">
+        <select name="name" id="team-select">
         <% @teams.each do |team| %>
-            <option value=<%= team.id %>><%= team.name %></option>
+            <option value=<%= team.name %>><%= team.name %></option>
         <% end %>
         </select>
 
-    <input type='submit' value='Add team'/>
+    <input type='submit' value='Add team'>
 </form>
