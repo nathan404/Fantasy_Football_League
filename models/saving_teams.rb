@@ -58,3 +58,22 @@ team10 = Team.new({
 # team8.save()
 # team9.save()
 # team10.save()
+
+
+# CURRENTLY REDUNDANT METHODS 
+# SIMILAR FOR CONCEDED
+
+# def total_home_goals_scored
+#     sql = "SELECT games.home_goals FROM games
+#     INNER JOIN teams
+#     ON teams.id = games.home_team_id
+#     WHERE teams.id = $1;"
+#     values = [id]
+#     data = SqlRunner.run(sql, values)
+#     goals = data.map {|number| number['home_goals'].to_i}
+#     total = 0
+#     for goal in goals
+#         total += goal
+#     end
+#     total
+# end  
