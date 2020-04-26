@@ -114,21 +114,10 @@ game4.save()
 game5.save()
 game6.save()
 
-# team1.result(game1)
-# team1.result(game3)
-# team1.result(game5)
-
-# team2.result(game1)
-# team2.result(game4)
-# team2.result(game6)
-
-# team3.result(game2)
-# team3.result(game3)
-# team3.result(game6)
-
-# team4.result(game2)
-# team4.result(game4)
-# team4.result(game5)
+team1.results
+team2.results
+team3.results
+team4.results
 
 team1.update()
 team2.update()
@@ -136,4 +125,4 @@ team3.update()
 team4.update()
 team5.update()
 
-p team1.results.first
+p game1.score

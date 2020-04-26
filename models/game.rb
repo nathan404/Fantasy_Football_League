@@ -49,11 +49,10 @@ class Game
     end
 
     def score()
-        home_team = game_info.home_team
         home_goals = game_info.home_goals
         away_team = game_info.away_team
         away_goals = game_info.away_goals
-        return "#{home_team} #{home_goals} - #{away_goals} #{away_team}"
+        return "#{game_info.home_team} #{home_goals} - #{away_goals} #{away_team}"
     end
 
     def update()
