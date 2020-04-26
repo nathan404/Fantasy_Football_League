@@ -42,6 +42,16 @@ class Team
         SqlRunner.run(sql, values)
     end
 
+    def results
+        sql = "SELECT games.* FROM games
+        INNER JOIN teams
+        ON teams.id = games.home_team_id OR teams.id = games.away_team_id
+        WHERE teams.id = $1;"
+        values = [id]
+        data = SqlRunner.run(sql, values)
+        Game.map_items(data)
+    end
+
     def result(game)
         home_id = game.home_team_id
         away_id = game.away_team_id
