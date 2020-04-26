@@ -124,8 +124,3 @@ team2.update()
 team3.update()
 team4.update()
 team5.update()
-
-p game1.score
-p game1.teams
-p game1.away_team
-p game1.home_team

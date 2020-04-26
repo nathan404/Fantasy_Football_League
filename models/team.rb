@@ -29,14 +29,6 @@ class Team
         @id = id
     end
 
-    # SEEMS REDUNDANT
-    # def games
-    #     sql = "SELECT * FROM games WHERE home_team_id = $1 OR away_team_id = $1"
-    #     values = [@id]
-    #     result_data = SqlRunner.run(sql, values)
-    #     Game.map_items(result_data)
-    # end
-
     def delete_games()
         sql = "DELETE FROM games WHERE home_team_id = $1 OR away_team_id = $1"
         values = [@id]
@@ -181,21 +173,5 @@ class Team
         result = Team.map_items(team_data)
         return result.first
     end
-
-    # DONT THINK THIS IS NEEDED
-    # def self.results
-    #     sql = "SELECT games.* FROM games
-    #     INNER JOIN teams
-    #     ON teams.id = games.home_team_id OR teams.id = games.away_team_id
-    #     WHERE teams.id = $1;"
-    #     values=[id]
-    #     data = SqlRunner.run(sql, values)
-    #     games = Game.map_items(data)
-    #     for game in games
-    #         result(game)
-    #     end
-    #     return games
-    # end
-
     
 end
