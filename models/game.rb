@@ -26,13 +26,11 @@ class Game
     end
 
     def home_team
-        home_team = Team.find(@home_team_id)
-        return home_team.name
+        return Team.find(@home_team_id).name
     end
 
     def away_team
-        away_team = Team.find(@away_team_id)
-        return away_team.name
+        return Team.find(@away_team_id).name
     end
 
     def game_info()
@@ -43,16 +41,11 @@ class Game
     end
 
     def teams()
-        home_team = game_info.home_team
-        away_team = game_info.away_team
-        return "#{home_team} versus #{away_team}"
+        return "#{game_info.home_team} versus #{game_info.away_team}"
     end
 
     def score()
-        home_goals = game_info.home_goals
-        away_team = game_info.away_team
-        away_goals = game_info.away_goals
-        return "#{game_info.home_team} #{home_goals} - #{away_goals} #{away_team}"
+        return "#{game_info.home_team} #{game_info.home_goals} - #{game_info.away_goals} #{game_info.away_team}"
     end
 
     def update()
