@@ -17,6 +17,7 @@ get '/games/new' do
 end
 
 post '/games' do
+    Team.all()
     Game.new(params).save
     redirect to '/games'
 end
