@@ -17,9 +17,14 @@ end
 
 post '/games' do
     @teams = Team.all()
-    Game.new(params).save
-    @teams.each {|team| team.results}
-    @teams.each {|team| team.update}
+    game = Game.new(params)
+    game.save
+    team1 = Team.find(game.home_team_id)
+    team2 = Team.find(game.away_team_id)
+    team1.result(game)
+    team2.result(game)
+    team1.update
+    team2.update
     redirect to '/games'
 end
 

@@ -24,7 +24,7 @@ class Team
         VALUES
         ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING id"
-        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active]
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active = true]
         result = SqlRunner.run(sql, values)
         id = result.first['id'].to_i
         @id = id
@@ -123,7 +123,7 @@ class Team
         (name, played, wins, draws, losses, goals_for, goals_against, points, active)
         = ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         WHERE id = $10"
-        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active = true, @id]
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active, @id]
         SqlRunner.run(sql, values)
     end
 
