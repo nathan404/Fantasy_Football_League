@@ -56,14 +56,14 @@ team5 = Team.new({
     'losses' => 0,
     'goals_for' => 0,
     'goals_against' => 0,
-    'points' => 0
+    'points' => 0,
 })
 
 team1.save()
 team2.save()
 team3.save()
 team4.save()
-team5.save()
+# team5.save()
 
 game1 = Game.new({
     'home_team_id' => team1.id,
@@ -123,5 +123,5 @@ team1.update()
 team2.update()
 team3.update()
 team4.update()
-team5.update()
+# team5.update()
 

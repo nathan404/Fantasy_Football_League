@@ -12,7 +12,7 @@ end
 
 get '/games/new' do
     @teams = Team.all()
-    erb(:'games/idea_new')
+    erb(:'games/new')
 end
 
 post '/games' do
