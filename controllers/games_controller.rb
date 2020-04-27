@@ -11,12 +11,12 @@ get '/games' do
 end
 
 get '/games/new' do
-    @teams = Team.all()
+    @teams = Team.active_teams()
     erb(:'games/new')
 end
 
 post '/games' do
-    @teams = Team.all()
+    @teams = Team.active_teams()
     game = Game.new(params)
     game.save
     team1 = Team.find(game.home_team_id)
