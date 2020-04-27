@@ -118,6 +118,12 @@ class Team
         team_data = Team.map_item(info)
     end
 
+    def delete_games()
+        sql = "DELETE FROM games WHERE home_team_id = $1 OR away_team_id = $1"
+        values = [@id]
+        SqlRunner.run(sql, values)
+    end
+
     def update()
         sql = "UPDATE teams SET
         (name, played, wins, draws, losses, goals_for, goals_against, points, active)

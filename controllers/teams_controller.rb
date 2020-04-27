@@ -17,7 +17,7 @@ end
 
 post '/teams' do
     team = Team.new(params)
-    team.save
+    # team.save
     team.update
     redirect to '/teams'
 end
@@ -29,6 +29,7 @@ end
 
 post '/teams/:id/delete' do
     team = Team.find(params[:id])
+    
     team.delete()
     redirect to '/teams'
 end
