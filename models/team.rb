@@ -24,7 +24,7 @@ class Team
         VALUES
         ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING id"
-        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active = true]
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active]
         result = SqlRunner.run(sql, values)
         id = result.first['id'].to_i
         @id = id
@@ -123,7 +123,7 @@ class Team
         (name, played, wins, draws, losses, goals_for, goals_against, points, active)
         = ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         WHERE id = $10"
-        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active, @id]
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active = true, @id]
         SqlRunner.run(sql, values)
     end
 
@@ -143,6 +143,21 @@ class Team
 
     def self.all()
         sql = "SELECT * FROM teams"
+        team_data = SqlRunner.run(sql)
+        teams = map_items(team_data)
+        return teams
+    end
+
+    def self.active_teams()
+        sql = "SELECT * FROM teams WHERE active = true"
+        team_data = SqlRunner.run(sql)
+        teams = map_items(team_data)
+        teams.each {|team| team.update}
+        return teams
+    end
+
+    def self.inactive_teams()
+        sql = "SELECT * FROM teams WHERE active = false"
         team_data = SqlRunner.run(sql)
         teams = map_items(team_data)
         return teams

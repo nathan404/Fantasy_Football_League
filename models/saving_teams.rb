@@ -77,3 +77,13 @@ team10 = Team.new({
 #     end
 #     total
 # end  
+
+<option value= "Germany" >Germany</option>
+            <option value= "Nigeria" >Nigeria</option>
+            <option value= "Argentina" >Argentina</option>
+            <option value= "England" >England</option>
+            <option value= "Cameroon" >Cameroon</option>
+            <option value= "Italy" >Italy</option>
+            <option value= "Japan" >Japan</option>
+            <option value= "France" >France</option>
+            <option value= "Brazil" >Brazil</option>

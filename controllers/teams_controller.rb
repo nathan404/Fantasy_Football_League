@@ -6,16 +6,19 @@ require_relative('../models/game.rb')
 also_reload('../models/*')
 
 get '/teams' do
-    @teams = Team.all()
+    @teams = Team.active_teams()
     erb(:'teams/index')
 end
 
 get '/teams/new' do
+    @teams = Team.all()
     erb(:'teams/new')
 end
 
 post '/teams' do
-    Team.new(params).save
+    team = Team.new(params)
+    team.save
+    team.update
     redirect to '/teams'
 end
 

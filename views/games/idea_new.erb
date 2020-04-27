@@ -4,7 +4,7 @@
         <label for="home-team-select">Choose the home team:</label>
         <select name="team-id" id="home-team-select">
         <% @teams.each do |team| %>
-            <% team.results.each do |whatever|%>
+            <% team.id_id.each do |whatever|%>
             <option value=<%= whatever.home_team_id %>><%= team.name %></option>
             <% end %>
         <% end %>
