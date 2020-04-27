@@ -40,6 +40,20 @@ class Team
         games = Game.map_items(data)
     end
 
+    def lineup
+        sql = "SELECT players.* FROM players
+        INNER JOIN teams
+        ON teams.id = players.country_id
+        WHERE teams.id = $1;"
+        values = [id]
+        data = SqlRunner.run(sql, values)
+        players = Player.map_items(data)
+        lineup = players.map {|player| player.last_name}
+        for player in lineup 
+            p player
+        end
+    end
+
     def results
         sql = "SELECT games.* FROM games
         INNER JOIN teams

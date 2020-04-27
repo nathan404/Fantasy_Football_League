@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Player
 
-    attr_reader :id, :first_name, :last_name, :country, :position
+    attr_reader :id, :first_name, :last_name, :country_id, :position
     attr_accessor :goals
 
     def initialize(options)
@@ -20,7 +20,7 @@ class Player
         VALUES
         ($1, $2, $3, $4, $5)
         RETURNING id"
-        values = [@first_name, @last_name, @country, @position, @goals]
+        values = [@first_name, @last_name, @country_id, @position, @goals]
         result = SqlRunner.run(sql, values)
         id = result.first['id'].to_i
         @id = id
@@ -38,4 +38,7 @@ class Player
         SqlRunner.run(sql)
     end
 
+    def self.map_items(player_data)
+        return player_data.map {|player| Player.new(player)}
+    end
 end

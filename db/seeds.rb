@@ -126,6 +126,18 @@ team10 = Team.new({
     'active' => false
 })
 
+team11 = Team.new({
+    'name' => 'England',
+    'played' => 0,
+    'wins' => 0,
+    'draws' => 0,
+    'losses' => 0,
+    'goals_for' => 0,
+    'goals_against' => 0,
+    'points' => 0,
+    'active' => false
+})
+
 team1.save()
 team2.save()
 team3.save()
@@ -136,6 +148,7 @@ team7.save()
 team8.save()
 team9.save()
 team10.save()
+team11.save()
 
 game1 = Game.new({
     'home_team_id' => team1.id,
@@ -210,17 +223,130 @@ b9 = Player.new({'first_name' => nil, 'last_name' => 'Leonardo', 'country_id' =>
 b10 = Player.new({'first_name' => nil, 'last_name' => 'Bebeto', 'country_id' => team2.id, 'position' => 'Striker', 'goals' => 0})
 b11 = Player.new({'first_name' => nil, 'last_name' => 'Ronaldo', 'country_id' => team2.id, 'position' => 'Striker', 'goals' => 0})
 
+c1 = Player.new({'first_name' => 'Drazen', 'last_name' => 'Ladic', 'country_id' => team3.id, 'position' => 'Goalkeeper', 'goals' => 0})
+c2 = Player.new({'first_name' => 'Igor', 'last_name' => 'Stimac', 'country_id' => team3.id, 'position' => 'Defender', 'goals' => 0})
+c3 = Player.new({'first_name' => 'Dario', 'last_name' => 'Simic', 'country_id' => team3.id, 'position' => 'Defender', 'goals' => 0})
+c4 = Player.new({'first_name' => 'Slaven', 'last_name' => 'Bilic', 'country_id' => team3.id, 'position' => 'Defender', 'goals' => 0})
+c5 = Player.new({'first_name' => 'Mario', 'last_name' => 'Stanic', 'country_id' => team3.id, 'position' => 'Defender', 'goals' => 0})
+c6 = Player.new({'first_name' => 'Robert', 'last_name' => 'Jarni', 'country_id' => team3.id, 'position' => 'Defender', 'goals' => 0})
+c7 = Player.new({'first_name' => 'Zvonimir', 'last_name' => 'Soldo', 'country_id' => team3.id, 'position' => 'Midfielder', 'goals' => 0})
+c8 = Player.new({'first_name' => 'Aljosa', 'last_name' => 'Asanovic', 'country_id' => team3.id, 'position' => 'Midfielder', 'goals' => 0})
+c9 = Player.new({'first_name' => 'Zvonimir', 'last_name' => 'Boban', 'country_id' => team3.id, 'position' => 'Midfielder', 'goals' => 0})
+c10 = Player.new({'first_name' => 'Robert','last_name' => 'Prosinecki', 'country_id' => team3.id, 'position' => 'Striker', 'goals' => 0})
+c11 = Player.new({'first_name' => 'Davor','last_name' => 'Suker', 'country_id' => team3.id, 'position' => 'Striker', 'goals' => 0})
+
+n1 = Player.new({'first_name' => 'Edwin', 'last_name' => 'van der Sar', 'country_id' => team4.id, 'position' => 'Goalkeeper', 'goals' => 0})
+n2 = Player.new({'first_name' => 'Michael', 'last_name' => 'Reiziger', 'country_id' => team4.id, 'position' => 'Defender', 'goals' => 0})
+n3 = Player.new({'first_name' => 'Jaap', 'last_name' => 'Stam', 'country_id' => team4.id, 'position' => 'Defender', 'goals' => 0})
+n4 = Player.new({'first_name' => 'Frank', 'last_name' => 'de Boer', 'country_id' => team4.id, 'position' => 'Defender', 'goals' => 0})
+n5 = Player.new({'first_name' => 'Artur', 'last_name' => 'Numan', 'country_id' => team4.id, 'position' => 'Defender', 'goals' => 0})
+n6 = Player.new({'first_name' => 'Wim', 'last_name' => 'Jonk', 'country_id' => team4.id, 'position' => 'Midfielder', 'goals' => 0})
+n7 = Player.new({'first_name' => 'Edgar', 'last_name' => 'Davids', 'country_id' => team4.id, 'position' => 'Midfielder', 'goals' => 0})
+n8 = Player.new({'first_name' => 'Ronald', 'last_name' => 'de Boer', 'country_id' => team4.id, 'position' => 'Midfielder', 'goals' => 0})
+n9 = Player.new({'first_name' => 'Philip', 'last_name' => 'Cocu', 'country_id' => team4.id, 'position' => 'Midfielder', 'goals' => 0})
+n10 = Player.new({'first_name' => 'Dennis', 'last_name' => 'Bergkamp', 'country_id' => team4.id, 'position' => 'Striker', 'goals' => 0})
+n11 = Player.new({'first_name' => 'Patrick', 'last_name' => 'Kluivert', 'country_id' => team4.id, 'position' => 'Striker', 'goals' => 0})
+
+s1 = Player.new({'first_name' => 'Jim', 'last_name' => 'Leighton', 'country_id' => team5.id, 'position' => 'Goalkeeper', 'goals' => 0})
+s2 = Player.new({'first_name' => 'Tom', 'last_name' => 'Boyd', 'country_id' => team5.id, 'position' => 'Defender', 'goals' => 0})
+s3 = Player.new({'first_name' => 'Colin', 'last_name' => 'Calderwood', 'country_id' => team5.id, 'position' => 'Defender', 'goals' => 0})
+s4 = Player.new({'first_name' => 'Colin', 'last_name' => 'Hendry', 'country_id' => team5.id, 'position' => 'Defender', 'goals' => 0})
+s5 = Player.new({'first_name' => 'Christian', 'last_name' => 'Dailly', 'country_id' => team5.id, 'position' => 'Defender', 'goals' => 0})
+s6 = Player.new({'first_name' => 'Paul', 'last_name' => 'Lambert', 'country_id' => team5.id, 'position' => 'Midfielder', 'goals' => 0})
+s7 = Player.new({'first_name' => 'Craig', 'last_name' => 'Burley', 'country_id' => team5.id, 'position' => 'Midfielder', 'goals' => 0})
+s8 = Player.new({'first_name' => 'John', 'last_name' => 'Collins', 'country_id' => team5.id, 'position' => 'Midfielder', 'goals' => 0})
+s9 = Player.new({'first_name' => 'Kevin', 'last_name' => 'Gallacher', 'country_id' => team5.id, 'position' => 'Striker', 'goals' => 0})
+s10 = Player.new({'first_name' => 'Gordon', 'last_name' => 'Durie', 'country_id' => team5.id, 'position' => 'Striker', 'goals' => 0})
+s11 = Player.new({'first_name' => 'Darren', 'last_name' => 'Jackson', 'country_id' => team5.id, 'position' => 'Striker', 'goals' => 0})
+
+ni1 = Player.new({'first_name' => 'Peter', 'last_name' => 'Rufai', 'country_id' => team6.id, 'position' => 'Goalkeeper', 'goals' => 0})
+ni2 = Player.new({'first_name' => 'Mutiu', 'last_name' => 'Adepoju', 'country_id' => team6.id, 'position' => 'Defender', 'goals' => 0})
+ni3 = Player.new({'first_name' => 'Taribo', 'last_name' => 'West', 'country_id' => team6.id, 'position' => 'Defender', 'goals' => 0})
+ni4 = Player.new({'first_name' => 'Uche', 'last_name' => 'Okechukwu', 'country_id' => team6.id, 'position' => 'Defender', 'goals' => 0})
+ni5 = Player.new({'first_name' => 'Celestine', 'last_name' => 'Babayaro', 'country_id' => team6.id, 'position' => 'Defender', 'goals' => 0})
+ni6 = Player.new({'first_name' => 'Sunday', 'last_name' => 'Oliseh', 'country_id' => team6.id, 'position' => 'Midfielder', 'goals' => 0})
+ni7 = Player.new({'first_name' => 'Finidi', 'last_name' => 'George', 'country_id' => team6.id, 'position' => 'Midfielder', 'goals' => 0})
+ni8 = Player.new({'first_name' => 'Garba', 'last_name' => 'Lawal', 'country_id' => team6.id, 'position' => 'Midfielder', 'goals' => 0})
+ni9 = Player.new({'first_name' => 'Jay Jay', 'last_name' => 'Okocha', 'country_id' => team6.id, 'position' => 'Midfielder', 'goals' => 0})
+ni10 = Player.new({'first_name' => 'Nwankwo', 'last_name' => 'Kanu', 'country_id' => team6.id, 'position' => 'Striker', 'goals' => 0})
+ni11 = Player.new({'first_name' => 'Victor', 'last_name' => 'Ikpeba', 'country_id' => team6.id, 'position' => 'Striker', 'goals' => 0})
+
+i1 = Player.new({'first_name' => 'Gianluca', 'last_name' => 'Pagliuca', 'country_id' => team7.id, 'position' => 'Goalkeeper', 'goals' => 0})
+i2 = Player.new({'first_name' => 'Alessandro', 'last_name' => 'Costacurta', 'country_id' => team7.id, 'position' => 'Defender', 'goals' => 0})
+i3 = Player.new({'first_name' => 'Fabio', 'last_name' => 'Cannavaro', 'country_id' => team7.id, 'position' => 'Defender', 'goals' => 0})
+i4 = Player.new({'first_name' => 'Alessandro', 'last_name' => 'Nesta', 'country_id' => team7.id, 'position' => 'Defender', 'goals' => 0})
+i5 = Player.new({'first_name' => 'Paolo', 'last_name' => 'Maldini', 'country_id' => team7.id, 'position' => 'Defender', 'goals' => 0})
+i6 = Player.new({'first_name' => 'Dino', 'last_name' => 'Baggio', 'country_id' => team7.id, 'position' => 'Midfielder', 'goals' => 0})
+i7 = Player.new({'first_name' => 'Demetrio', 'last_name' => 'Albertini', 'country_id' => team7.id, 'position' => 'Midfielder', 'goals' => 0})
+i8 = Player.new({'first_name' => 'Luigi', 'last_name' => 'Di Biagio', 'country_id' => team7.id, 'position' => 'Midfielder', 'goals' => 0})
+i9 = Player.new({'first_name' => 'Francesco', 'last_name' => 'Moriero', 'country_id' => team7.id, 'position' => 'Midfielder', 'goals' => 0})
+i10 = Player.new({'first_name' => 'Roberto', 'last_name' => 'Baggio', 'country_id' => team7.id, 'position' => 'Striker', 'goals' => 0})
+i11 = Player.new({'first_name' => 'Christian', 'last_name' => 'Vieri', 'country_id' => team7.id, 'position' => 'Striker', 'goals' => 0})
+
+a1 = Player.new({'first_name' => 'Carlos', 'last_name' => 'Roa', 'country_id' => team8.id, 'position' => 'Goalkeeper', 'goals' => 0})
+a2 = Player.new({'first_name' => 'Javier', 'last_name' => 'Zanetti', 'country_id' => team8.id, 'position' => 'Defender', 'goals' => 0})
+a3 = Player.new({'first_name' => 'Roberto', 'last_name' => 'Ayala', 'country_id' => team8.id, 'position' => 'Defender', 'goals' => 0})
+a4 = Player.new({'first_name' => 'Jose', 'last_name' => 'Chamot', 'country_id' => team8.id, 'position' => 'Defender', 'goals' => 0})
+a5 = Player.new({'first_name' => 'Roberto', 'last_name' => 'Sensini', 'country_id' => team8.id, 'position' => 'Defender', 'goals' => 0})
+a6 = Player.new({'first_name' => 'Matias', 'last_name' => 'Almeyda', 'country_id' => team8.id, 'position' => 'Midfielder', 'goals' => 0})
+a7 = Player.new({'first_name' => 'Diego', 'last_name' => 'Simeone', 'country_id' => team8.id, 'position' => 'Midfielder', 'goals' => 0})
+a8 = Player.new({'first_name' => 'Juan Sebastian', 'last_name' => 'Veron', 'country_id' => team8.id, 'position' => 'Midfielder', 'goals' => 0})
+a9 = Player.new({'first_name' => 'Ariel', 'last_name' => 'Ortega', 'country_id' => team8.id, 'position' => 'Midfielder', 'goals' => 0})
+a10 = Player.new({'first_name' => 'Claudio', 'last_name' => 'Lopez', 'country_id' => team8.id, 'position' => 'Striker', 'goals' => 0})
+a11 = Player.new({'first_name' => 'Gabriel', 'last_name' => 'Batistuta', 'country_id' => team8.id, 'position' => 'Striker', 'goals' => 0})
+
+g1 = Player.new({'first_name' => 'Andreas', 'last_name' => 'Kopke', 'country_id' => team9.id, 'position' => 'Goalkeeper', 'goals' => 0})
+g2 = Player.new({'first_name' => 'Jorg', 'last_name' => 'Heinrich', 'country_id' => team9.id, 'position' => 'Defender', 'goals' => 0})
+g3 = Player.new({'first_name' => 'Christian', 'last_name' => 'Worns', 'country_id' => team9.id, 'position' => 'Defender', 'goals' => 0})
+g4 = Player.new({'first_name' => 'Lothar', 'last_name' => 'Matthaus', 'country_id' => team9.id, 'position' => 'Defender', 'goals' => 0})
+g5 = Player.new({'first_name' => 'Jurgen', 'last_name' => 'Kohler', 'country_id' => team9.id, 'position' => 'Defender', 'goals' => 0})
+g6 = Player.new({'first_name' => 'Michael', 'last_name' => 'Tarnat', 'country_id' => team9.id, 'position' => 'Defender', 'goals' => 0})
+g7 = Player.new({'first_name' => 'Dietmar', 'last_name' => 'Hamann', 'country_id' => team9.id, 'position' => 'Midfielder', 'goals' => 0})
+g8 = Player.new({'first_name' => 'Jens', 'last_name' => 'Jeremies', 'country_id' => team9.id, 'position' => 'Midfielder', 'goals' => 0})
+g9 = Player.new({'first_name' => 'Thomas', 'last_name' => 'Hassler', 'country_id' => team9.id, 'position' => 'Midfielder', 'goals' => 0})
+g10 = Player.new({'first_name' => 'Oliver', 'last_name' => 'Bierhoff', 'country_id' => team9.id, 'position' => 'Striker', 'goals' => 0})
+g11 = Player.new({'first_name' => 'Jurgen', 'last_name' => 'Klinsmann', 'country_id' => team9.id, 'position' => 'Striker', 'goals' => 0})
+
+d1 = Player.new({'first_name' => 'Peter', 'last_name' => 'Schmeichel', 'country_id' => team10.id, 'position' => 'Goalkeeper', 'goals' => 0})
+d2 = Player.new({'first_name' => 'Michael', 'last_name' => 'Schjonberg', 'country_id' => team10.id, 'position' => 'Defender', 'goals' => 0})
+d3 = Player.new({'first_name' => 'Marc', 'last_name' => 'Rieper', 'country_id' => team10.id, 'position' => 'Defender', 'goals' => 0})
+d4 = Player.new({'first_name' => 'Jes', 'last_name' => 'Hogh', 'country_id' => team10.id, 'position' => 'Defender', 'goals' => 0})
+d5 = Player.new({'first_name' => 'Thomas', 'last_name' => 'Helveg', 'country_id' => team10.id, 'position' => 'Defender', 'goals' => 0})
+d6 = Player.new({'first_name' => 'Soren', 'last_name' => 'Colding', 'country_id' => team10.id, 'position' => 'Defender', 'goals' => 0})
+d7 = Player.new({'first_name' => 'Michael', 'last_name' => 'Laudrup', 'country_id' => team10.id, 'position' => 'Midfielder', 'goals' => 0})
+d8 = Player.new({'first_name' => 'Morten', 'last_name' => 'Wieghorst', 'country_id' => team10.id, 'position' => 'Midfielder', 'goals' => 0})
+d9 = Player.new({'first_name' => 'Martin', 'last_name' => 'Jorgensen', 'country_id' => team10.id, 'position' => 'Midfielder', 'goals' => 0})
+d10 = Player.new({'first_name' => 'Brian', 'last_name' => 'Laudrup', 'country_id' => team10.id, 'position' => 'Striker', 'goals' => 0})
+d11 = Player.new({'first_name' => 'Ebbe', 'last_name' => 'Sand', 'country_id' => team10.id, 'position' => 'Striker', 'goals' => 0})
+
+e1 = Player.new({'first_name' => 'David', 'last_name' => 'Seaman', 'country_id' => team11.id, 'position' => 'Goalkeeper', 'goals' => 0})
+e2 = Player.new({'first_name' => 'Gary', 'last_name' => 'Neville', 'country_id' => team11.id, 'position' => 'Defender', 'goals' => 0})
+e3 = Player.new({'first_name' => 'Tony', 'last_name' => 'Adams', 'country_id' => team11.id, 'position' => 'Defender', 'goals' => 0})
+e4 = Player.new({'first_name' => 'Sol', 'last_name' => 'Campbell', 'country_id' => team11.id, 'position' => 'Defender', 'goals' => 0})
+e5 = Player.new({'first_name' => 'Graeme', 'last_name' => 'Le Saux', 'country_id' => team11.id, 'position' => 'Defender', 'goals' => 0})
+e6 = Player.new({'first_name' => 'David', 'last_name' => 'Beckham', 'country_id' => team11.id, 'position' => 'Defender', 'goals' => 0})
+e7 = Player.new({'first_name' => 'Paul', 'last_name' => 'Ince', 'country_id' => team11.id, 'position' => 'Midfielder', 'goals' => 0})
+e8 = Player.new({'first_name' => 'Paul', 'last_name' => 'Scholes', 'country_id' => team11.id, 'position' => 'Midfielder', 'goals' => 0})
+e9 = Player.new({'first_name' => 'Darren', 'last_name' => 'Anderton', 'country_id' => team11.id, 'position' => 'Midfielder', 'goals' => 0})
+e10 = Player.new({'first_name' => 'Michael', 'last_name' => 'Owen', 'country_id' => team11.id, 'position' => 'Striker', 'goals' => 0})
+e11 = Player.new({'first_name' => 'Alan', 'last_name' => 'Shearer', 'country_id' => team11.id, 'position' => 'Striker', 'goals' => 0})
+
 france_team = [f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11]
 brazil_team = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11]
+croatia_team = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11]
+netherlands_team = [n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11]
 
-france_team.each {|player| player.save}
-brazil_team.each {|player| player.format_name}
-brazil_team.each {|player| player.save}
+# france_team.each {|player| player.save}
+# brazil_team.each {|player| player.format_name}
+# brazil_team.each {|player| player.save}
+# croatia_team.each {|player| player.save}
+# netherlands_team.each {|player| player.save}
 
-france_lineup = france_team.each {|player| p player.last_name}
-brazil_lineup = brazil_team.each {|player| p player.format_name}
+# france_lineup = france_team.each {|player| p player.last_name}
+# brazil_lineup = brazil_team.each {|player| p player.format_name}
 
-
+# team1.lineup
+# team4.lineup
 
 team1.results
 team2.results
@@ -231,5 +357,5 @@ team1.update()
 team2.update()
 team3.update()
 team4.update()
-# team5.update()
+
 
