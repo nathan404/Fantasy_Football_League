@@ -63,6 +63,11 @@ class Game
         SqlRunner.run(sql, values)
     end
 
+    def self.delete_records(teams, game)
+        teams.each {|team| team.destroy(game)}
+        teams.each {|team| team.update}
+    end
+
     def self.find(id)
         sql = "SELECT * FROM games WHERE id=$1"
         values = [id]
