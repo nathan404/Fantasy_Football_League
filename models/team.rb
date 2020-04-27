@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 class Team
 
     attr_reader :id, :name
-    attr_accessor :played, :wins, :draws, :losses, :goals_for, :goals_against, :points
+    attr_accessor :played, :wins, :draws, :losses, :goals_for, :goals_against, :points, :active
 
     def initialize(options)
         @id = options['id'].to_i if options['id']
@@ -15,15 +15,16 @@ class Team
         @goals_for = options['goals_for'].to_i
         @goals_against = options['goals_against'].to_i
         @points = options['points'].to_i
+        @active = false
     end
 
     def save()
         sql = "INSERT INTO teams
-        (name, played, wins, draws, losses, goals_for, goals_against, points)
+        (name, played, wins, draws, losses, goals_for, goals_against, points, active)
         VALUES
-        ($1, $2, $3, $4, $5, $6, $7, $8)
+        ($1, $2, $3, $4, $5, $6, $7, $8, $9)
         RETURNING id"
-        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points]
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active]
         result = SqlRunner.run(sql, values)
         id = result.first['id'].to_i
         @id = id
@@ -119,10 +120,10 @@ class Team
 
     def update()
         sql = "UPDATE teams SET
-        (name, played, wins, draws, losses, goals_for, goals_against, points)
-        = ($1, $2, $3, $4, $5, $6, $7, $8)
-        WHERE id = $9"
-        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @id]
+        (name, played, wins, draws, losses, goals_for, goals_against, points, active)
+        = ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        WHERE id = $10"
+        values = [@name, @played, @wins, @draws, @losses, @goals_for, @goals_against, @points, @active = true, @id]
         SqlRunner.run(sql, values)
     end
 
