@@ -130,10 +130,10 @@ team3.save()
 team4.save()
 team5.save()
 team6.save()
-# team7.save()
-# team8.save()
-# team9.save()
-# team10.save()
+team7.save()
+team8.save()
+team9.save()
+team10.save()
 
 game1 = Game.new({
     'home_team_id' => team1.id,
@@ -195,12 +195,3 @@ team3.update()
 team4.update()
 # team5.update()
 
-# p Team.active_teams
-# p Team.inactive_teams
-# p Team.all
-
-# team7.save
-# # p team7
-# team7.update
-# # p team7
-# p Team.active_teams

@@ -11,13 +11,13 @@ get '/teams' do
 end
 
 get '/teams/new' do
-    @teams = Team.all()
+    @teams = Team.inactive_teams()
     erb(:'teams/new')
 end
 
 post '/teams' do
     team = Team.new(params)
-    # team.save
+    team.save
     team.update
     redirect to '/teams'
 end
