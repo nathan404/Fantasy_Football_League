@@ -76,6 +76,15 @@ class Game
         return game
     end
 
+    def self.creating_games(game)
+        team1 = Team.find(game.home_team_id)
+        team2 = Team.find(game.away_team_id)
+        team1.result(game)
+        team2.result(game)
+        team1.update
+        team2.update
+    end
+
     def self.all()
         sql = "SELECT * FROM games"
         game_data = SqlRunner.run(sql)
