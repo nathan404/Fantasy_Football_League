@@ -125,6 +125,7 @@ class Team
         for team in teams
             for game in games
                 team.destroy(game)
+                game.delete
             end
         end
         teams.each {|team| team.update}
