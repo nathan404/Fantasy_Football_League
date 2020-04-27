@@ -143,6 +143,15 @@ class Team
         SqlRunner.run(sql, values)
     end
 
+    def render_inactive
+        sql = "UPDATE teams SET
+        (name, played, wins, draws, losses, goals_for, goals_against, points, active)
+        = ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+        WHERE id = $10"
+        values = [@name, @played = 0, @wins = 0, @draws = 0, @losses = 0, @goals_for = 0, @goals_against = 0, @points = 0, @active = false, @id]
+        SqlRunner.run(sql, values)
+    end
+
     def delete()
         sql = "DELETE FROM teams WHERE id = $1"
         values = [@id]

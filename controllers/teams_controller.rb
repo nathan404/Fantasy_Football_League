@@ -38,6 +38,6 @@ post '/teams/:id/delete' do
         end
     end
     @teams.each {|opponent| opponent.update}
-    team.delete()
+    team.render_inactive()
     redirect to '/teams'
 end

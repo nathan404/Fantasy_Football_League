@@ -194,15 +194,3 @@ team2.update()
 team3.update()
 team4.update()
 # team5.update()
-
-# p team2.games
-
-# @games = team.games
-#     @teams = Team.active_teams
-#     for bla in @teams
-#         for game in @games
-#             bla.destroy(game)
-#         end
-#     end
-#     @teams.each {|team| team.update}
-#     team.delete()
