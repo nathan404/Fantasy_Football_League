@@ -5,7 +5,9 @@
 <h3>Team lineup:</h3>
 
 <ul>
-    
+    <%for player in @team.lineup %>
+    <li><%= player.format_name%> </li>
+    <% end%>
 </ul>
 
 <form method="POST" action="/teams/<%= @team.id %>/delete">

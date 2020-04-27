@@ -47,11 +47,7 @@ class Team
         WHERE teams.id = $1;"
         values = [id]
         data = SqlRunner.run(sql, values)
-        players = Player.map_items(data)
-        lineup = players.map {|player| player.last_name}
-        for player in lineup 
-            p player
-        end
+        players = Player.map_items(data).map
     end
 
     def results

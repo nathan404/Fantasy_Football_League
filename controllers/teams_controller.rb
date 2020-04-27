@@ -3,6 +3,7 @@ require('sinatra/contrib/all')
 require('pry-byebug')
 require_relative('../models/team.rb')
 require_relative('../models/game.rb')
+require_relative('../models/player.rb')
 also_reload('../models/*')
 
 get '/teams' do
