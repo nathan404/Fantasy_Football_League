@@ -12,13 +12,14 @@ end
 
 get '/games/new' do
     @teams = Team.all()
-    @games = Game.all()
-    erb(:'games/new')
+    erb(:'games/idea_new')
 end
 
 post '/games' do
-    Team.all()
+    @teams = Team.all()
     Game.new(params).save
+    @teams.each {|team| team.results}
+    @teams.each {|team| team.update}
     redirect to '/games'
 end
 

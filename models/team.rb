@@ -29,12 +29,6 @@ class Team
         @id = id
     end
 
-    def delete_games()
-        sql = "DELETE FROM games WHERE home_team_id = $1 OR away_team_id = $1"
-        values = [@id]
-        SqlRunner.run(sql, values)
-    end
-
     def results
         sql = "SELECT games.* FROM games
         INNER JOIN teams
