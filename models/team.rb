@@ -121,6 +121,15 @@ class Team
         end
     end
 
+    def self.delete_records(teams, games)
+        for team in teams
+            for game in games
+                team.destroy(game)
+            end
+        end
+        teams.each {|team| team.update}
+    end
+
     def team_info()
         sql = "SELECT * FROM teams WHERE id = $1"
         values = [@id]
