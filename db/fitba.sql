@@ -1,3 +1,4 @@
+DROP TABLE players;
 DROP TABLE games;
 DROP TABLE teams;
 
@@ -20,4 +21,13 @@ CREATE TABLE games (
     home_goals INT,
     away_team_id INT REFERENCES teams(id) ON DELETE CASCADE,
     away_goals INT
+);
+
+CREATE TABLE players (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    country_id INT REFERENCES teams(id) ON DELETE CASCADE,
+    position VARCHAR(255),
+    goals INT
 );
