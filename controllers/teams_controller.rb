@@ -16,9 +16,10 @@ get '/teams/new' do
 end
 
 post '/teams' do
-    team = Team.new(params)
-    team.save
-    team.update
+    team = Team.find(params[:id])
+    p team
+    # team.save
+    # team.update
     redirect to '/teams'
 end
 
@@ -29,7 +30,14 @@ end
 
 post '/teams/:id/delete' do
     team = Team.find(params[:id])
-    
+    @games = team.games
+    @teams = Team.active_teams
+    for opponent in @teams
+        for game in @games
+            opponent.destroy(game)
+        end
+    end
+    @teams.each {|opponent| opponent.update}
     team.delete()
     redirect to '/teams'
 end

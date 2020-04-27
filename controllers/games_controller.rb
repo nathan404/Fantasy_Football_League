@@ -37,7 +37,7 @@ post '/games/:id/delete' do
     game = Game.find(params[:id])
     game.delete()
     Game.all()
-    @teams = Team.all()
+    @teams = Team.active_teams()
     @teams.each {|team| team.destroy(game)}
     @teams.each {|team| team.update}
     redirect to '/games'
