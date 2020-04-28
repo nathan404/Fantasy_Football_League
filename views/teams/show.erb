@@ -33,38 +33,39 @@
 </table>
 
 <% if @team.name == 'France' %>
-<img src="/images/france.jpeg"/>
+<img src="/images/france.jpeg" id="image"/>
 <% end %>
 <% if @team.name == 'Brazil' %>
-<img src="/images/brazil.jpeg"/>
+<img src="/images/brazil.jpeg" id="image"/>
 <% end %>
 <% if @team.name == 'Croatia' %>
-<img src="/images/croatia.jpeg"/>
+<img src="/images/croatia.jpeg" id="image"/>
 <% end %>
 <% if @team.name == 'Netherlands' %>
-<img src="/images/netherlands.jpeg"/>
+<img src="/images/netherlands.jpeg" id="image"/>
 <% end %>
 <% if @team.name == 'Scotland' %>
-<img src="/images/scotland.jpeg"/>
+<img src="/images/scotland.jpeg" id="image"/>
 <% end %>
 <% if @team.name == 'Nigeria' %>
-<img src="/images/nigeria.jpeg"/>
+<img src="/images/nigeria.jpeg" id="image"/>
 <% end %>
 <% if @team.name == 'Italy' %>
-<img src="/images/italy.jpeg"/>
+<img src="/images/italy.jpeg" id="image"/>
 <% end %>
 <% if @team.name == 'Argentina' %>
-<img src="/images/argentina.jpeg"/>
+<img src="/images/argentina.jpeg" id="image"/>
 <% end %>
 <% if @team.name == 'Germany' %>
-<img src="/images/germany.png"/>
+<img src="/images/germany.png" id="image"/>
 <% end %>
 <% if @team.name == 'Denmark' %>
-<img src="/images/denmark.jpeg"/>
+<img src="/images/denmark.jpeg" id="image"/>
 <% end %>
 <% if @team.name == 'England' %>
-<img src="/images/england.jpeg"/>
+<img src="/images/england.jpeg" id="image"/>
 <% end %>
+
 
 <form method="POST" action="/teams/<%= @team.id %>/delete">
 <input type="submit" value="Delete Team"/>
