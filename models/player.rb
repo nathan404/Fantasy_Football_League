@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class Player
 
-    attr_reader :id, :first_name, :last_name, :country_id, :position
+    attr_reader :id, :first_name, :last_name, :country_id, :position, :shirt_number
     attr_accessor :goals
 
     def initialize(options)
@@ -12,15 +12,16 @@ class Player
         @country_id = options['country_id'].to_i
         @position = options['position']
         @goals = options['goals'].to_i
+        @shirt_number = options['shirt_number'].to_i
     end
 
     def save()
         sql = "INSERT into players
-        (first_name, last_name, country_id, position, goals)
+        (first_name, last_name, country_id, position, goals, shirt_number)
         VALUES
-        ($1, $2, $3, $4, $5)
+        ($1, $2, $3, $4, $5, $6)
         RETURNING id"
-        values = [@first_name, @last_name, @country_id, @position, @goals]
+        values = [@first_name, @last_name, @country_id, @position, @goals, @shirt_number]
         result = SqlRunner.run(sql, values)
         id = result.first['id'].to_i
         @id = id
