@@ -1,3 +1,8 @@
-<h1>Welcome to Fifa 98 Fantasy Island!</h1>
+<h1>Welcome to Fifa 98 Fantasy League!</h1>
 
-<p>Relive a great summer</p>
+<p>Relive a great summer by adding and deleting teams to the league.</p>
+<p> Matches can be played between the following teams: </p>
+
+<% @teams.each do |team| %>
+<li><%= team.name %></li>
+<% end %>

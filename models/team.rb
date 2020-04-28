@@ -30,6 +30,10 @@ class Team
         @id = id
     end
 
+    def goal_difference
+        return @goals_for - @goals_against
+    end
+
     def games
         sql = "SELECT games.* FROM games
         INNER JOIN teams
@@ -178,6 +182,14 @@ class Team
         team_data = SqlRunner.run(sql)
         teams = map_items(team_data)
         return teams
+    end
+
+    def self.table()
+        teams = Team.active_teams
+        league_position = teams.sort {|team1, team2| team1.goal_difference <=> team2.goal_difference}
+        league_position.reverse
+        league_position = teams.sort {|team1, team2| team1.points <=> team2.points}
+        return league_position.reverse
     end
 
     def self.active_teams()

@@ -6,5 +6,6 @@ require_relative('controllers/teams_controller')
 also_reload('models/*')
 
 get '/' do
+    @teams = Team.all
     erb(:index)
 end

@@ -1,7 +1,50 @@
-<h2>Teams</h2>
+<h2>Active Teams</h2>
 
 <div id='team-wrapper'>
 <% @teams.each do |team| %>
     <p><a href='/teams/<%= team.id %>'><%= team.name %></a></p>
 <% end %>
 </div>
+
+<h2> Current table </h2>
+
+<table>
+    <tr>
+        <th>Team</th>
+        <th></th>
+        <th>P</th>
+        <th></th>
+        <th>W</th>
+        <th></th>
+        <th>D</th>
+        <th></th>
+        <th>L</th>
+        <th></th>
+        <th>GF</th>
+        <th></th>
+        <th>GA</th>
+        <th></th>
+        <th>Pts</th>
+    </tr>
+
+    <% @teams.each do |team| %>
+    <tr>
+        <td><%= team.name%></td>
+        <td></td>
+        <td><%= team.played%></td>
+        <td></td>
+        <td><%= team.wins%></td>
+        <td></td>
+        <td><%= team.draws%></td>
+        <td></td>
+        <td><%= team.losses%></td>
+        <td></td>
+        <td><%= team.goals_for%></td>
+        <td></td>
+        <td><%= team.goals_against%></td>
+        <td></td>
+        <td><%= team.points%></td>
+    </tr>
+    <% end %>
+
+</table>

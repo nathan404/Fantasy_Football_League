@@ -32,6 +32,39 @@
 
 </table>
 
+<% if @team.name == 'France' %>
+<img src="/images/france.jpeg"/>
+<% end %>
+<% if @team.name == 'Brazil' %>
+<img src="/images/brazil.jpeg"/>
+<% end %>
+<% if @team.name == 'Croatia' %>
+<img src="/images/croatia.jpeg"/>
+<% end %>
+<% if @team.name == 'Netherlands' %>
+<img src="/images/netherlands.jpeg"/>
+<% end %>
+<% if @team.name == 'Scotland' %>
+<img src="/images/scotland.jpeg"/>
+<% end %>
+<% if @team.name == 'Nigeria' %>
+<img src="/images/nigeria.jpeg"/>
+<% end %>
+<% if @team.name == 'Italy' %>
+<img src="/images/italy.jpeg"/>
+<% end %>
+<% if @team.name == 'Argentina' %>
+<img src="/images/argentina.jpeg"/>
+<% end %>
+<% if @team.name == 'Germany' %>
+<img src="/images/germany.png"/>
+<% end %>
+<% if @team.name == 'Denmark' %>
+<img src="/images/denmark.jpeg"/>
+<% end %>
+<% if @team.name == 'England' %>
+<img src="/images/england.jpeg"/>
+<% end %>
 
 <form method="POST" action="/teams/<%= @team.id %>/delete">
 <input type="submit" value="Delete Team"/>

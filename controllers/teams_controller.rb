@@ -7,7 +7,7 @@ require_relative('../models/player.rb')
 also_reload('../models/*')
 
 get '/teams' do
-    @teams = Team.active_teams()
+    @teams = Team.table
     erb(:'teams/index')
 end
 
