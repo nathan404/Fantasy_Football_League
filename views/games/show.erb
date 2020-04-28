@@ -1,7 +1,4 @@
-<h1><%= @game.score %></h1>
-
-<p><a href='/teams/<%= @game.home_team_id %>'><%= @game.home_team %></a></p>
-<p><a href='/teams/<%= @game.away_team_id %>'><%= @game.away_team %></a></p>
+<h1><a href='/teams/<%= @game.home_team_id %>'><%= @game.home_team %></a> <%= @game.home_goals %> - <%= @game.away_goals %> <a href='/teams/<%= @game.away_team_id %>'><%= @game.away_team %></a></h1>
 
 <h3>Team lineups:</h3>
 
