@@ -9,42 +9,45 @@
 <h2> Current table </h2>
 
 <table>
-    <tr>
-        <th>Team</th>
-        <th></th>
-        <th>P</th>
-        <th></th>
-        <th>W</th>
-        <th></th>
-        <th>D</th>
-        <th></th>
-        <th>L</th>
-        <th></th>
-        <th>GF</th>
-        <th></th>
-        <th>GA</th>
-        <th></th>
-        <th>Pts</th>
-    </tr>
-
-    <% @teams.each do |team| %>
-    <tr>
-        <td><%= team.name%></td>
-        <td></td>
-        <td><%= team.played%></td>
-        <td></td>
-        <td><%= team.wins%></td>
-        <td></td>
-        <td><%= team.draws%></td>
-        <td></td>
-        <td><%= team.losses%></td>
-        <td></td>
-        <td><%= team.goals_for%></td>
-        <td></td>
-        <td><%= team.goals_against%></td>
-        <td></td>
-        <td><%= team.points%></td>
-    </tr>
-    <% end %>
+    <thead class="league_table">
+        <tr>
+            <th>Team</th>
+            <th></th>
+            <th>P</th>
+            <th></th>
+            <th>W</th>
+            <th></th>
+            <th>D</th>
+            <th></th>
+            <th>L</th>
+            <th></th>
+            <th>GF</th>
+            <th></th>
+            <th>GA</th>
+            <th></th>
+            <th>Pts</th>
+        </tr>
+    </thead>    
+    <tbody>
+        <% @teams.each do |team| %>
+        <tr>
+            <td class="team_name"><%= team.name%></td>
+            <td></td>
+            <td><%= team.played%></td>
+            <td></td>
+            <td><%= team.wins%></td>
+            <td></td>
+            <td><%= team.draws%></td>
+            <td></td>
+            <td><%= team.losses%></td>
+            <td></td>
+            <td><%= team.goals_for%></td>
+            <td></td>
+            <td><%= team.goals_against%></td>
+            <td></td>
+            <td><%= team.points%></td>
+        </tr>
+        <% end %>
+    </tbody>
 
 </table>

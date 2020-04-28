@@ -2,14 +2,21 @@
 <html>
 <head>
     <title>World Cup '98 Fantasy League</title>
-    <link rel="stylesheet" type="text/css" href="/styles/structure.css">
+
+    <link rel="icon" href="/images/world_cup.png" />
+    <link rel="stylesheet" type="text/css" href="/styles/structure_fitba.css">
+    <link rel="stylesheet" type="text/css" href="/styles/tables_fitba.css">
 </head>
 <body>
     <nav id="menu">
-        <li class='menu-item'><a href='/teams'>Teams</a></li>
-        <li class='menu-item'><a href='/games'>Games</a></li>
-        <li class='menu-item'><a href='/teams/new'>Add Teams</a></li>
-        <li class='menu-item'><a href='/games/new'>Add Games</a></li>
+        <table>
+            <tr>
+                <th class='menu-item'><a href='/teams'>Teams</a></th>
+                <th class='menu-item'><a href='/games'>Games</a></th>
+                <th class='menu-item'><a href='/teams/new'>Add Teams</a></th>
+                <th class='menu-item'><a href='/games/new'>Add Games</a></th>
+            </tr>
+        </table>
     </nav>
     <%= yield %>
 </body>

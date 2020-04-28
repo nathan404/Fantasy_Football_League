@@ -1,0 +1,25 @@
+th {
+    text-align: left;
+    padding: 10px 20px 0px 0px;
+}
+
+td {
+    text-align: center;
+    padding: 10px 10px 0px 0px;
+}
+
+.lineup{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
+
+.players {
+    text-align: left;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+}
+
+.team_name {
+    text-align: left;
+}
+
