@@ -12,8 +12,9 @@ body {
 }
 
 #image {
-    position: absolute;
-    right: 100px;
-    width: 750px;
-    height: 500px;
+    height: 100%;
+}
+.image_place {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
 }
