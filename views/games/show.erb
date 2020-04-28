@@ -5,9 +5,45 @@
 
 <h3>Team lineups:</h3>
 
-<ul>
-    
-</ul>
+<table>
+    <tr>
+        <th>No.</th>
+        <th></th>
+        <th>Player</th>
+        <th></th>
+        <th>Position</th>
+        <th></th>
+        <th>Position</th>
+        <th></th>
+        <th>Player</th>
+        <th></th>
+        <th>No.</th>
+    </tr>
+
+    <% for player in @game.home_team_lineup %>
+    <tr>
+        <td><%= player.shirt_number%></td>
+        <td></td>
+        <td><%= player.format_name%></td>
+        <td></td>
+        <td><%= player.position%></td>
+    </tr>
+    <% end%>
+
+    <% for player in @game.away_team_lineup %>
+    <tr>
+        <td><%= player.position%></td>
+        <td></td>
+        <td><%= player.format_name%></td>
+        <td></td>
+        <td><%= player.shirt_number%></td>
+    </tr>
+    <% end%>
+
+
+
+</table>
+
 
 <form method="POST" action="/games/<%= @game.id %>/delete">
 <input type="submit" value="Delete Game"/>

@@ -29,8 +29,16 @@ class Game
         return Team.find(@home_team_id).name
     end
 
+    def home_team_lineup
+        return Team.find(@home_team_id).lineup
+    end
+
     def away_team
         return Team.find(@away_team_id).name
+    end
+
+    def away_team_lineup
+        return Team.find(@away_team_id).lineup
     end
 
     def game_info()

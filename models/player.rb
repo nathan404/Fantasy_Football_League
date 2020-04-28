@@ -12,7 +12,7 @@ class Player
         @country_id = options['country_id'].to_i
         @position = options['position']
         @goals = options['goals'].to_i
-        @shirt_number = options['shirt_number'].to_i
+        @shirt_number = options['shirt_number']
     end
 
     def save()
