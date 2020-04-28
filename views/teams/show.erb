@@ -1,6 +1,13 @@
 <h1><%= @team.name %></h1>
 
 <h2>Matches:</h2>
+        <div>
+        <% for game in @team.games%>
+            
+            <li><a href='/games/<%= game.id %>'><%= game.score %></a></li>
+
+            <% end %>
+        </div>
 
 <h3>Team lineup</h3>
 

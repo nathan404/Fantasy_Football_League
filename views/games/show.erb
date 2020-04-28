@@ -9,12 +9,6 @@
         <th>Player</th>
         <th></th>
         <th>Position</th>
-        <th></th>
-        <th>Position</th>
-        <th></th>
-        <th>Player</th>
-        <th></th>
-        <th>No.</th>
     </tr>
 
     <% for player in @game.home_team_lineup %>
@@ -26,7 +20,16 @@
         <td><%= player.position%></td>
     </tr>
     <% end%>
+</table>
 
+<table>
+    <tr>
+        <th>Position</th>
+        <th></th>
+        <th>Player</th>
+        <th></th>
+        <th>No.</th>
+    </tr>
     <% for player in @game.away_team_lineup %>
     <tr>
         <td><%= player.position%></td>
@@ -36,8 +39,6 @@
         <td><%= player.shirt_number%></td>
     </tr>
     <% end%>
-
-
 
 </table>
 
