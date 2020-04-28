@@ -1,12 +1,12 @@
-<h2>Active Teams</h2>
+<h2><div class="team_header">Active Teams</h2></div>
 
 <div id='team-wrapper'>
 <% @teams.each do |team| %>
     <p><a href='/teams/<%= team.id %>'><%= team.name %></a></p>
 <% end %>
-</div>
 
-<h2> Current table </h2>
+
+<h2><div class="team_header"> Current table </h2></div>
 
 <table>
     <thead class="league_table">
@@ -51,3 +51,4 @@
     </tbody>
 
 </table>
+</div>

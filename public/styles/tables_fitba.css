@@ -8,10 +8,6 @@ td {
     padding: 10px 10px 0px 0px;
 }
 
-#player_heading {
-    text-align: left;
-}
-
 .players {
     text-align: left;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -23,3 +19,6 @@ td {
     text-align: left;
 }
 
+.player_heading {
+    text-align: left;
+}

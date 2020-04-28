@@ -1,7 +1,7 @@
-<h1><%= @team.name %></h1>
+<h2><%= @team.name %></h2>
 
 <h3>Matches:</h3>
-        <div>
+        <div class="match_colour">
         <% for game in @team.games%>
             
             <li><a href='/games/<%= game.id %>'><%= game.score %></a></li>
@@ -15,7 +15,9 @@
         <tr>
             <th>Position</th>
             <th></th>
-            <th>Player</th>
+            <th class="player_heading">Player</th>
+            <th></th>
+            <th class="player_heading">Club</th>
             <th></th>
             <th>No.</th>
         </tr>
@@ -25,6 +27,8 @@
             <td><%= player.position%></td>
             <td></td>
             <td class="players"><%= player.format_name%></td>
+            <td></td>
+            <td class="players"><%= player.club %></td>
             <td></td>
             <td><%= player.shirt_number%></td>
         </tr>

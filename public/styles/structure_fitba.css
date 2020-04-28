@@ -1,13 +1,18 @@
 body {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.2em;
+    background-color: rgb(28, 217, 241);
+    font-family: Helvetica;
+    font-size: 1.6em;
 }
 
-.menu-item {
-    justify-content: center;
-    align-items: flex-start;
-    align-content: flex-start;
-    font-size: 2em;
+#team-wrapper {
+    font-size: 1.1em;
+}
+
+.menu {
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
 }
 
 #score_heading {
@@ -29,4 +34,12 @@ body {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 1em;
+}
+
+.match_colour, a {
+    color: rgb(12, 30, 190);
+}
+
+#netherlands {
+    background-color: rgb(255, 137, 58);
 }

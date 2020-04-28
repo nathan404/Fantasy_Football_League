@@ -29,6 +29,6 @@ CREATE TABLE players (
     last_name VARCHAR(255),
     country_id INT REFERENCES teams(id) ON DELETE CASCADE,
     position VARCHAR(255),
-    goals INT,
+    club VARCHAR(255),
     shirt_number VARCHAR(255)
 );
