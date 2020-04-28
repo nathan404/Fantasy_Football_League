@@ -1,10 +1,8 @@
 body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.2em;
 }
 
-h2 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
 
 .menu-item {
     justify-content: center;

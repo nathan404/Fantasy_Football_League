@@ -1,25 +1,25 @@
 <h1>Add a game</h1>
 
 <form method="POST" action="/games">
-        <label for="home-team-select">Choose the home team:</label>
+        <li><label for="home-team-select">Choose the home team:</label>
         <select name="home_team_id" id="home-team-select">
         <% @teams.each do |team| %>
             <option value=<%= team.id %>><%= team.name %></option>
         <% end %>
-        </select>
+        </select></li>
 
-        <label for='home-goals'>Goals scored by home team:</label>
-        <input type='number' name="home_goals" id='home-goals' min='0'/>
+        <li><label for='home-goals'>Goals scored by home team:</label>
+        <input type='number' name="home_goals" id='home-goals' min='0'/></li>
 
-        <label for="away-team-select">Choose the away team:</label>
+        <li><label for="away-team-select">Choose the away team:</label>
         <select name="away_team_id" id="away-team-select">
         <% @teams.each do |team| %>
             <option value=<%= team.id %>><%= team.name %></option>
         <% end %>
-        </select>
+        </select></li>
 
-        <label for='away-goals'>Goals scored by away team:</label>
-        <input type='number' name='away_goals' id='away-goals' min='0'/>
+        <li><label for='away-goals'>Goals scored by away team:</label>
+        <input type='number' name='away_goals' id='away-goals' min='0'/></li>
 
     <input type='submit' value='Add game'>
 </form>

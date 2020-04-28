@@ -2,7 +2,7 @@
 
 <h3>Team lineups:</h3>
 
-<table>
+<table class="lineup">
     <tr>
         <th>No.</th>
         <th></th>
@@ -15,14 +15,14 @@
     <tr>
         <td><%= player.shirt_number%></td>
         <td></td>
-        <td><%= player.format_name%></td>
+        <td class="players"><%= player.format_name%></td>
         <td></td>
         <td><%= player.position%></td>
     </tr>
     <% end%>
 </table>
 
-<table>
+<table class="lineup">
     <tr>
         <th>Position</th>
         <th></th>
@@ -34,7 +34,7 @@
     <tr>
         <td><%= player.position%></td>
         <td></td>
-        <td><%= player.format_name%></td>
+        <td class="players"><%= player.format_name%></td>
         <td></td>
         <td><%= player.shirt_number%></td>
     </tr>

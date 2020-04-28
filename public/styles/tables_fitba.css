@@ -16,6 +16,7 @@ td {
 .players {
     text-align: left;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
     font-weight: lighter;
 }
 
