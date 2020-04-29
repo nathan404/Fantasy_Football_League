@@ -72,7 +72,7 @@
 </div>
 
 <form method="POST" action="/teams/<%= @team.id %>/delete">
-<input type="submit" value="Delete Team"/>
+<input class="button" type="submit" value="Delete Team"/>
 </form>
 
-<p>When you delete a team, all games involving this team will also be deleted</p>
+<p id="delete_team">When you delete a team, all games involving this team will also be deleted.</p>
