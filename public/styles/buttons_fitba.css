@@ -6,15 +6,26 @@
 }
 
 .add_button {
-    border: 0px;
     padding: 10px 15px;
+    margin: 50px 50px;
+    font-size: large;
     color: yellow;
     background-color: blue;
 }
 
-.team_select {
-    border: 0px;
-    padding: 10px 15px;
+#team-select, #home-team-select, #away-team-select {
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    margin: 50px 50px;
+    font-size: 0.8em;
     color: yellow;
     background-color: blue;
+}
+
+#home-goals, #away-goals {
+    width: 50px;
+    height: 35px;
+    font-size: large;
+    color: blue;
+    background-color: yellow;
 }
