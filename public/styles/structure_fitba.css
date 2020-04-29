@@ -47,7 +47,7 @@ body {
 
 .frontpage-teams {
     display: grid;
-    grid-template-columns: 5fr 5fr;
+    grid-template-columns: 2.5fr 2.5fr 2.5fr 2.5fr;
 }
 
 #player-image {

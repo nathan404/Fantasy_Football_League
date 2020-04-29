@@ -138,6 +138,18 @@ team11 = Team.new({
     'active' => false
 })
 
+team12 = Team.new({
+    'name' => 'Jamaica',
+    'played' => 0,
+    'wins' => 0,
+    'draws' => 0,
+    'losses' => 0,
+    'goals_for' => 0,
+    'goals_against' => 0,
+    'points' => 0,
+    'active' => false
+})
+
 team1.save()
 team2.save()
 team3.save()
@@ -149,6 +161,7 @@ team8.save()
 team9.save()
 team10.save()
 team11.save()
+team12.save()
 
 game1 = Game.new({
     'home_team_id' => team1.id,
@@ -331,6 +344,18 @@ e9 = Player.new({'first_name' => 'Paul', 'last_name' => 'Scholes', 'country_id' 
 e10 = Player.new({'first_name' => 'Michael', 'last_name' => 'Owen', 'country_id' => team11.id, 'position' => 'CF', 'club' => 'Liverpool', 'shirt_number' => '20'})
 e11 = Player.new({'first_name' => 'Alan', 'last_name' => 'Shearer', 'country_id' => team11.id, 'position' => 'CF', 'club' => 'Newcastle United', 'shirt_number' => '9'})
 
+j1 = Player.new({'first_name' => 'Warren', 'last_name' => 'Barrett', 'country_id' => team12.id, 'position' => 'GK', 'club' => 'Violet Kickers', 'shirt_number' => '1'})
+j2 = Player.new({'first_name' => 'Frank', 'last_name' => 'Sinclair', 'country_id' => team12.id, 'position' => 'CB', 'club' => 'Chelsea', 'shirt_number' => '19'})
+j3 = Player.new({'first_name' => 'Onandi', 'last_name' => 'Lowe', 'country_id' => team12.id, 'position' => 'CB', 'club' => 'Harbour View', 'shirt_number' => '17'})
+j4 = Player.new({'first_name' => 'Ian', 'last_name' => 'Goodison', 'country_id' => team12.id, 'position' => 'CB', 'club' => 'Olympic Gardens', 'shirt_number' => '5'})
+j5 = Player.new({'first_name' => 'Peter', 'last_name' => 'Cargill', 'country_id' => team12.id, 'position' => 'DM', 'club' => 'Harbour View', 'shirt_number' => '7'})
+j6 = Player.new({'first_name' => 'Theodore', 'last_name' => 'Whitmore', 'country_id' => team12.id, 'position' => 'RM', 'club' => 'Seba United', 'shirt_number' => '11'})
+j7 = Player.new({'first_name' => 'Robbie', 'last_name' => 'Earle', 'country_id' => team12.id, 'position' => 'MF', 'club' => 'Wimbledon', 'shirt_number' => '16'})
+j8 = Player.new({'first_name' => 'Fitzroy', 'last_name' => 'Simpson', 'country_id' => team12.id, 'position' => 'MF', 'club' => 'Portsmouth', 'shirt_number' => '6'})
+j9 = Player.new({'first_name' => 'Ricardo', 'last_name' => 'Gardner', 'country_id' => team12.id, 'position' => 'LM', 'club' => 'Harbour View', 'shirt_number' => '15'})
+j10 = Player.new({'first_name' => 'Deon', 'last_name' => 'Burton', 'country_id' => team12.id, 'position' => 'CF', 'club' => 'Derby County', 'shirt_number' => '18'})
+j11 = Player.new({'first_name' => 'Paul', 'last_name' => 'Hall', 'country_id' => team12.id, 'position' => 'CF', 'club' => 'Portsmouth', 'shirt_number' => '22'})
+
 france_team = [f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11]
 brazil_team = [b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11]
 croatia_team = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11]
@@ -342,6 +367,7 @@ argentina_team = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11]
 germany_team = [g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11]
 denmark_team = [d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11]
 england_team = [e1, e2, e3, e4, e5, e6, e7, e8, e9, e10, e11]
+jamaica_team = [j1, j2, j3, j4, j5, j6, j7, j8, j9, j10, j11]
 
 france_team.each {|player| player.save}
 brazil_team.each {|player| player.save}
@@ -354,6 +380,7 @@ argentina_team.each {|player| player.save}
 germany_team.each {|player| player.save}
 denmark_team.each {|player| player.save}
 england_team.each {|player| player.save}
+jamaica_team.each {|player| player.save}
 
 team1.results
 team2.results

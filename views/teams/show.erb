@@ -69,6 +69,9 @@
     <% if @team.name == 'England' %>
     <img src="/images/england.jpeg" id="image"/>
     <% end %>
+    <% if @team.name == 'Jamaica' %>
+    <img src="/images/jamaica.jpeg" id="image"/>
+    <% end %>
 </div>
 
 <form method="POST" action="/teams/<%= @team.id %>/delete">
