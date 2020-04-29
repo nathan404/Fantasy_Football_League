@@ -44,3 +44,13 @@ body {
 #delete_team {
     text-align: center;
 }
+
+.frontpage-teams {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+}
+
+#player-image {
+    width: 30%;
+    height: 30%;
+}
