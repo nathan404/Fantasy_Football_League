@@ -4,7 +4,7 @@
     <label for="team-select">
     Choose a team:
     </label>
-        <select name="id" id="team-select">
+        <select name="id" id="team-select" required>
            <% @teams.each do |team| %>
            <option value=<%= team.id %>><%= team.name  %></option>
            <% end %>
