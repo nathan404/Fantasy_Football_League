@@ -186,9 +186,7 @@ class Team
 
     def self.table()
         teams = Team.active_teams
-        league_position = teams.sort {|team1, team2| team1.goal_difference <=> team2.goal_difference}
-        league_position.reverse
-        league_position = teams.sort {|team1, team2| team1.points <=> team2.points}
+        league_position = teams.sort_by {|team| [team.points, team.goal_difference]}
         return league_position.reverse
     end
 
