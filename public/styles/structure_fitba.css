@@ -6,6 +6,18 @@ body {
 
 #team-wrapper {
     font-size: 1.1em;
+    display: flexbox;
+}
+
+.teams-page, .games-page{
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+}
+
+
+#player-new-image {
+    width: 375px;
+    height: 240px;
 }
 
 .menu {
@@ -51,5 +63,5 @@ body {
 
 #player-image {
     width: 30%;
-    height: 30%;
 }
+

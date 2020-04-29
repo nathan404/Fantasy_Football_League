@@ -1,12 +1,15 @@
-<h2><div class="team_header">Active Teams</h2></div>
 
+<div class='teams-page'>
 <div id='team-wrapper'>
+
+<h2>Active Teams</h2>
+
 <% @teams.each do |team| %>
     <p><a href='/teams/<%= team.id %>'><%= team.name %></a></p>
 <% end %>
 
 
-<h2><div class="team_header"> Current table </h2></div>
+<h2>Current table </h2>
 
 <table>
     <thead class="league_table">
@@ -51,4 +54,11 @@
     </tbody>
 
 </table>
+</div>
+
+<div class="photocolumn">
+<p><img src="/images/zidane.jpeg" id="player-new-image"/></p>
+<p><img src="/images/bergkamp.jpeg" id="player-new-image"/></p>
+<p><img src="/images/collins.jpeg" id="player-new-image"/></p>
+</div>
 </div>

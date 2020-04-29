@@ -1,7 +1,14 @@
 <h2>Games</h2>
 
+<div class="games-page">
 <div id='game-wrapper'>
 <% @games.each do |game| %>
     <p><a href='/games/<%= game.id %>'><%= game.score %></a></p>
 <% end %>
+</div>
+
+<div class="photocolumn">
+<p><img src="/images/ronaldo.jpeg" id="player-new-image"/></p>
+<p><img src="/images/batistuta.jpeg" id="player-new-image"/></p>
+</div>
 </div>
