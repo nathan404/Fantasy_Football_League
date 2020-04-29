@@ -9,7 +9,7 @@ body {
     display: flexbox;
 }
 
-.teams-page, .games-page{
+.teams-page, .games-page, .add-game{
     display: grid;
     grid-template-columns: 5fr 5fr;
 }
